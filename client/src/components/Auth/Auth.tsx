@@ -1,12 +1,12 @@
 import React from 'react';
-import LoginForm from './LoginForm';
-import { LoginContainer } from './LoginForm.style';
+import AuthForm from './AuthForm';
+import { AuthContainer } from './AuthForm.style';
 
 function Auth() {
   return (
-    <LoginContainer>
-      <LoginForm />
-    </LoginContainer>
+    <AuthContainer>
+      <AuthForm />
+    </AuthContainer>
   );
 }
 

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const LoginContainer = styled.div`
+export const AuthContainer = styled.div`
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -8,7 +8,7 @@ export const LoginContainer = styled.div`
   align-items: center;
 `;
 
-export const LoginFormContainer = styled.form`
+export const AuthFormContainer = styled.form`
   width: 100%;
   max-width: 320px;
   display: flex;
@@ -20,7 +20,7 @@ export const LoginFormContainer = styled.form`
 export const Title = styled.h1`
   font-size: 30px;
 `;
-export const LoginFormInput = styled.input`
+export const AuthFormInput = styled.input`
   max-width: 320px;
   width: 100%;
   padding: 10px;
@@ -32,7 +32,7 @@ export const LoginFormInput = styled.input`
   color: black;
 `;
 
-export const LoginFormSubmit = styled.button`
+export const AuthFormSubmit = styled.button`
   max-width: 320px;
   width: 100%;
   padding: 10px;

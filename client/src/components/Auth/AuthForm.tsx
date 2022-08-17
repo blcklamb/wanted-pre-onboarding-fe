@@ -2,14 +2,14 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import * as Api from '../../api/api';
 import {
-  LoginFormContainer,
+  AuthFormContainer,
   Title,
-  LoginFormInput,
-  LoginFormSubmit,
+  AuthFormInput,
+  AuthFormSubmit,
   AuthSwitch,
-} from './LoginForm.style';
+} from './AuthForm.style';
 
-function LoginForm() {
+function AuthForm() {
   const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -82,9 +82,9 @@ function LoginForm() {
 
   return (
     <>
-      <LoginFormContainer onSubmit={handleSubmit}>
+      <AuthFormContainer onSubmit={handleSubmit}>
         <Title>{newAccount ? 'Sign Up' : 'Sign In'} </Title>
-        <LoginFormInput
+        <AuthFormInput
           type="text"
           name="email"
           placeholder="email"
@@ -93,7 +93,7 @@ function LoginForm() {
           onChange={onChange}
         />
         {!isEmailValid && <>Not Valid Email Form</>}
-        <LoginFormInput
+        <AuthFormInput
           type="password"
           name="password"
           placeholder="password"
@@ -102,13 +102,13 @@ function LoginForm() {
           onChange={onChange}
         />
         {!isPasswordValid && <>Password must be over 8 letters</>}
-        <LoginFormSubmit disabled={!isFormValid} type="submit">
+        <AuthFormSubmit disabled={!isFormValid} type="submit">
           {newAccount ? 'Create Account' : 'Sign In'}
-        </LoginFormSubmit>
-      </LoginFormContainer>
+        </AuthFormSubmit>
+      </AuthFormContainer>
       <AuthSwitch onClick={toggleAccount}>{newAccount ? 'Sign In?' : 'Register?'}</AuthSwitch>
     </>
   );
 }
 
-export default LoginForm;
+export default AuthForm;
