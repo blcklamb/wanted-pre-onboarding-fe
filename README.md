@@ -11,13 +11,34 @@ npm start
 
 ## 데모 영상
 
+### Assignment1
+
+![demo01](https://user-images.githubusercontent.com/92101831/185141690-2699ec4a-4536-4cdb-b02f-4366974eaf4b.gif)
+
+
+### Assignment2
+
+![demo02](https://user-images.githubusercontent.com/92101831/185141703-e0e66d32-c3a4-4266-a710-84a3f7c4a16f.gif)
+
+### Assignment3
+
+![demo03](https://user-images.githubusercontent.com/92101831/185141712-55127f62-f4ec-4c71-a22a-fb0d7f798457.gif)
+
+### Assignment4
+
+![demo04](https://user-images.githubusercontent.com/92101831/185141720-c6ae69cb-5ea3-4c40-b298-b475d3070649.gif)
+
+### Assignment5
+
+![demo05](https://user-images.githubusercontent.com/92101831/185141724-661ac70a-845b-4fac-a09c-5edf041a1702.gif)
+
 
 ## 과제
 
 ---
 
 ### :: 1. 로그인 / 회원가입
-&#9744;
+
 - &#9745; `/` 경로에 로그인 / 회원가입 기능을 개발해주세요
   - &#9745; 페이지 안에 이메일 입력창, 비밀번호 입력창, 제출 버튼이 포함된 형태로 구성해주세요
   - &#9745; 로그인, 회원가입을 별도의 경로로 분리해도 무방합니다.
