@@ -25,7 +25,8 @@ function LoginForm() {
   const isFormValid = isEmailValid && isPasswordValid;
 
   useEffect(() => {
-    if(localStorage.getItem("userToken")){
+    if( localStorage.getItem("userToken") && localStorage.getItem("userToken")!= "undefined"){
+      console.log('useEffect', localStorage.getItem("userToken"))
         navigate("/todo")
         return;
     }
@@ -48,15 +49,23 @@ function LoginForm() {
     event.preventDefault();
     try {
       if (newAccount) {
-        const response = await Api.Auth.signUp({ email, password });
-        const userToken = response.access_token;
-        localStorage.setItem("userToken", userToken);
-        alert('Register Complete!')
+        try {
+          const response = await Api.Auth.signUp({ email, password });
+          const userToken = response.access_token;
+          localStorage.setItem("userToken", userToken);
+          alert('Register Complete!')
+        } catch (error:any){
+          alert(error.response.data.message)
+        }
       } else {
-        const response = await Api.Auth.signIn({ email, password });
-        const userToken = response.access_token;
-        localStorage.setItem("userToken", userToken);
-        alert('Sign In Complete!')
+        try {
+          const response = await Api.Auth.signIn({ email, password });
+          const userToken = response.access_token;
+          localStorage.setItem("userToken", userToken);
+          alert('Sign In Complete!')
+        }catch (error:any){
+          alert(error.response.data.message)
+        }
       }
       if (localStorage.getItem("userToken")) {
         navigate("/todo");

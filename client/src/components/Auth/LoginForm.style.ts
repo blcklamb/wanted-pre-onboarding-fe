@@ -43,6 +43,13 @@ export const LoginFormSubmit = styled.button`
   color: black;
   margin-top: 20px;
   cursor: pointer;
+  background-color: skyblue ;
+
+  &:disabled {
+    cursor: default;
+    opacity: 0.5;
+    background-color: grey;
+  }
 `;
 
 export const AuthSwitch = styled.span`
