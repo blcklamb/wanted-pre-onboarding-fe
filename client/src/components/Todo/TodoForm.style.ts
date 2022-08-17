@@ -114,12 +114,13 @@ export const TodoSubmitButton = styled.button`
   cursor: pointer;
 `;
 
-export const AuthSwitch = styled.span`
-  color: #04aaff;
-  cursor: pointer;
-  margin-top: 10px;
-  margin-bottom: 50px;
-  display: block;
-  font-size: 12px;
-  text-decoration: underline;
-`
+export const TodoCheckBox = styled.button`
+border-radius: 30px;
+margin-right: 3px ;
+margin-left: 3px;
+height: 20px;
+font-size: 12px;
+text-align: center;
+color: black;
+cursor: pointer;
+`;
