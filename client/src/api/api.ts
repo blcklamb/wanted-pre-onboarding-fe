@@ -24,7 +24,6 @@ const Auth = {
     email,
     password,
   }: SignInFormState): Promise<AuthResponse> => {
-    console.log(`%cSignIn 요청 ${email}, ${password}`, "color: #FAB3A9 ")
     const { data } = await axios.post(
       serverUrl+"/auth/signin",
       { email, password },
@@ -34,7 +33,6 @@ const Auth = {
         },
       }
     );
-    console.log(`%cSignIn 요청 완료 ${data.access_token}`, "color: #FAB3A9 ");
     return data;
   },
 
@@ -42,7 +40,6 @@ const Auth = {
     email,
     password,
   }: SignUpFormState): Promise<AuthResponse> => {
-    console.log(`%cSignUp 요청 ${email}, ${password}`, "color: #FAB3A9 ")
     const {data} = await axios.post(
       serverUrl + "/auth/signup",
       { email, password },
@@ -52,7 +49,6 @@ const Auth = {
         },
       }
     );
-    console.log(`%cSignUp 요청 완료 ${data.access_token}`, "color: #FAB3A9 ");
     return data;
   },
 };
@@ -61,8 +57,6 @@ const Todo = {
     createTodo: async ({
       todo,
     }: TodoFormState): Promise<TodoResponse> => {
-      console.log(`%cTodoCreate 요청 ${todo}`, "color: #ED6B86 ")
-      console.log(localStorage.getItem("userToken"))
       const { data } = await axios.post(
         serverUrl+"/todos",
         { todo },
@@ -73,12 +67,10 @@ const Todo = {
           },
         }
       );
-      console.log(`%cTodoCreate 요청 결과 ${data}`, "color: #ED6B86 ");
       return data;
     },
   
     getTodos: async (): Promise<TodoResponse[]> => {
-      console.log(`%cTodoGet 요청`, "color: #ED6B86 ")
       const {data} = await axios.get(
         serverUrl + "/todos",
         {
@@ -87,12 +79,10 @@ const Todo = {
         },
         }
       );
-      console.log(`%cTodoGet 요청 결과 ${data}`, "color: #ED6B86 ");
       return data;
     },
 
     updateTodo: async ({id, todo, isCompleted}: TodoUpdateState): Promise<AuthResponse> => {
-        console.log(`%cTodoUpdate 요청 ${id}, ${todo}, ${isCompleted}}`, "color: #ED6B86 ");
         const { data } = await axios.put(
             serverUrl+"/todos/"+`${id}`,
             { todo, isCompleted },
@@ -103,12 +93,10 @@ const Todo = {
               },
             }
           );
-          console.log(`%cTodoUpdate 요청 ${data.bodyData}`, "color: #ED6B86 ");
           return data;
     },
 
     deleteTodo: async ({id}: TodoDeleteState) => {
-        console.log(`%cTodoDelete 요청`, "color: #ED6B86 ");
         const { data } = await axios.delete(
             serverUrl+"/todos/"+`${id}`,
             {
@@ -117,7 +105,6 @@ const Todo = {
               },
             }
           );
-          console.log(`%cTodoDelete 요청 ${data.bodyData}`, "color: #ED6B86 ");
           return data;
     }
 

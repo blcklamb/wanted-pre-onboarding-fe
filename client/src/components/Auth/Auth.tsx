@@ -1,13 +1,13 @@
 import React from 'react'
-import LoginForm from "./LoginForm";
-import { LoginContainer } from "./LoginForm.style"
+import LoginForm from './LoginForm'
+import { LoginContainer } from './LoginForm.style'
 
 function Auth() {
   return (
     <LoginContainer>
-      <LoginForm/>
+      <LoginForm />
     </LoginContainer>
   )
 }
 
-export default Auth;
+export default Auth
