@@ -1,21 +1,20 @@
 export interface TodoFormState {
-    todo: string;
-  }
-  
+  todo: string;
+}
+
 export interface TodoUpdateState {
-    id: string;
-    todo: string;
-    isCompleted: boolean;
+  id: string;
+  todo: string;
+  isCompleted: boolean;
 }
 
 export interface TodoDeleteState {
-    id: string;
+  id: string;
 }
 
 export interface TodoResponse {
-    id: number;
-    todo: string;
-    isCompleted: boolean;
-    userId: number;
-  }
-  
+  id: number;
+  todo: string;
+  isCompleted: boolean;
+  userId: number;
+}

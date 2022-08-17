@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const LoginContainer = styled.div`
   display: flex;
@@ -18,8 +18,8 @@ export const LoginFormContainer = styled.form`
 `;
 
 export const Title = styled.h1`
-    font-size: 30px ;
-`
+  font-size: 30px;
+`;
 export const LoginFormInput = styled.input`
   max-width: 320px;
   width: 100%;
@@ -43,7 +43,7 @@ export const LoginFormSubmit = styled.button`
   color: black;
   margin-top: 20px;
   cursor: pointer;
-  background-color: skyblue ;
+  background-color: skyblue;
 
   &:disabled {
     cursor: default;
@@ -60,4 +60,4 @@ export const AuthSwitch = styled.span`
   display: block;
   font-size: 18px;
   text-decoration: underline;
-`
+`;

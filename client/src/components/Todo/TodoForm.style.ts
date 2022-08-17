@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const TodoContainer = styled.div`
   display: flex;
@@ -16,7 +16,7 @@ export const TodoFormContainer = styled.form`
 `;
 
 export const SignOutButton = styled.button`
-max-width: 100px;
+  max-width: 100px;
   width: 100%;
   padding: 10px;
   border-radius: 30px;
@@ -27,15 +27,15 @@ max-width: 100px;
   background-color: lightcoral;
   margin-top: 20px;
   cursor: pointer;
-`
+`;
 
 export const TodoCreateContainer = styled.div`
-    display: flex;
-    width:100% ;
-    max-width: 320px;
-    flex-direction: row;
-    justify-content: center ;
-`
+  display: flex;
+  width: 100%;
+  max-width: 320px;
+  flex-direction: row;
+  justify-content: center;
+`;
 
 export const TodoCreateButton = styled.button`
   max-width: 60px;
@@ -52,23 +52,23 @@ export const TodoCreateButton = styled.button`
 `;
 
 export const TodoListContainer = styled.div`
-    display: flex;
-    width:100% ;
-    max-width: 320px;
-    flex-direction: column;
-    justify-content: center ;
-`
+  display: flex;
+  width: 100%;
+  max-width: 320px;
+  flex-direction: column;
+  justify-content: center;
+`;
 export const TodoList = styled.div`
-    display: flex;
-    flex-direction: row;
-    font-size: 18px ;
-    align-items: center;
-`
+  display: flex;
+  flex-direction: row;
+  font-size: 18px;
+  align-items: center;
+`;
 
 export const TodoListLi = styled.li`
-    font-size: 18px ;
-    margin: 8px;
-`
+  font-size: 18px;
+  margin: 8px;
+`;
 
 export const TodoFormInput = styled.input`
   max-width: 320px;
@@ -96,16 +96,16 @@ export const TodoFormSubmit = styled.button`
 `;
 
 export const TodoEditForm = styled.div`
-    display: flex;
-    width:100% ;
-    max-width: 320px;
-    flex-direction: row;
-    justify-content: center ;
-`
+  display: flex;
+  width: 100%;
+  max-width: 320px;
+  flex-direction: row;
+  justify-content: center;
+`;
 
 export const TodoSubmitButton = styled.button`
   border-radius: 30px;
-  margin-right: 3px ;
+  margin-right: 3px;
   margin-left: 3px;
   height: 20px;
   font-size: 12px;
@@ -115,12 +115,12 @@ export const TodoSubmitButton = styled.button`
 `;
 
 export const TodoCheckBox = styled.button`
-border-radius: 30px;
-margin-right: 3px ;
-margin-left: 3px;
-height: 20px;
-font-size: 12px;
-text-align: center;
-color: black;
-cursor: pointer;
+  border-radius: 30px;
+  margin-right: 3px;
+  margin-left: 3px;
+  height: 20px;
+  font-size: 12px;
+  text-align: center;
+  color: black;
+  cursor: pointer;
 `;
