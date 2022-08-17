@@ -26,7 +26,6 @@ function LoginForm() {
 
   useEffect(() => {
     if(localStorage.getItem("userToken")){
-        console.log('token exist')
         navigate("/todo")
         return;
     }

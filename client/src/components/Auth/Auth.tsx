@@ -7,7 +7,6 @@ function Auth() {
     <LoginContainer>
       <LoginForm/>
     </LoginContainer>
-
   )
 }
 
