@@ -23,7 +23,6 @@ function Todo() {
       localStorage.getItem('userToken') === 'undefined' ||
       localStorage.getItem('userToken') === null
     ) {
-      console.log('no token');
       navigate('/');
       return;
     }
