@@ -14,15 +14,6 @@ axios.interceptors.response.use(
         config,
         response: { status },
       } = error;
-
-      if (status === 401) {
-        const originRequest = config;
-        const newAccessToken = error.response.data.newAccessToken;
-        localStorage.setItem("userToken", newAccessToken);
-
-        originRequest.headers.Authorization = `Bearer ${newAccessToken}`;
-        return axios(originRequest);
-      }
     }
     return Promise.reject(error);
   }
