@@ -15,6 +15,20 @@ export const TodoFormContainer = styled.form`
   flex-direction: column;
 `;
 
+export const SignOutButton = styled.button`
+max-width: 100px;
+  width: 100%;
+  padding: 10px;
+  border-radius: 30px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  font-size: 12px;
+  text-align: center;
+  background-color: lightcoral;
+  margin-top: 20px;
+  cursor: pointer;
+`
+
 export const TodoCreateContainer = styled.div`
     display: flex;
     width:100% ;

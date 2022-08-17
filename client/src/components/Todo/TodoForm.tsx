@@ -31,7 +31,11 @@ function TodoForm({setTodos}:any) {
     } catch (error:any) {
       return error.response.data;
     }
-    await Api.Todo.getTodos().then((response) => setTodos(response))
+    try {
+        await Api.Todo.getTodos().then((response) => setTodos(response))
+    } catch (error:any) {
+        return error.response.data
+    }
     setNewTodo('')
   };
   
