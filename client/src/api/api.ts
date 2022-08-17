@@ -2,8 +2,7 @@ import axios from "axios";
 import { SignUpFormState, SignInFormState, AuthResponse } from "../types/auth";
 import { TodoFormState, TodoUpdateState, TodoDeleteState, TodoResponse } from "../types/todo";
 
-const backendPortNumber = "8000";
-const serverUrl = "http://localhost:" + backendPortNumber;
+const serverUrl = "https://5co7shqbsf.execute-api.ap-northeast-2.amazonaws.com/production/";
 
 axios.interceptors.response.use(
   function(response) {
@@ -44,7 +43,7 @@ const Auth = {
         },
       }
     );
-    console.log(`%cSignIn 요청 완료 ${data.bodyData}`, "color: #FAB3A9 ");
+    console.log(`%cSignIn 요청 완료 ${data.access_token}`, "color: #FAB3A9 ");
     return data;
   },
 
@@ -62,7 +61,7 @@ const Auth = {
         },
       }
     );
-    console.log(`%cSignUp 요청 완료 ${data.bodyData}`, "color: #FAB3A9 ");
+    console.log(`%cSignUp 요청 완료 ${data.access_token}`, "color: #FAB3A9 ");
     return data;
   },
 };
@@ -72,6 +71,7 @@ const Todo = {
       todo,
     }: TodoFormState): Promise<TodoResponse> => {
       console.log(`%cTodoCreate 요청 ${todo}`, "color: #ED6B86 ")
+      console.log(localStorage.getItem("userToken"))
       const { data } = await axios.post(
         serverUrl+"/todos",
         { todo },
@@ -82,11 +82,11 @@ const Todo = {
           },
         }
       );
-      console.log(`%cTodoCreate 요청 ${data.bodyData}`, "color: #ED6B86 ");
+      console.log(`%cTodoCreate 요청 결과 ${data}`, "color: #ED6B86 ");
       return data;
     },
   
-    getTodos: async (): Promise<AuthResponse> => {
+    getTodos: async (): Promise<TodoResponse[]> => {
       console.log(`%cTodoGet 요청`, "color: #ED6B86 ")
       const {data} = await axios.get(
         serverUrl + "/todos",
@@ -96,7 +96,7 @@ const Todo = {
         },
         }
       );
-      console.log(`%cTodoGet 요청 ${data.bodyData}`, "color: #ED6B86 ");
+      console.log(`%cTodoGet 요청 결과 ${data}`, "color: #ED6B86 ");
       return data;
     },
 
