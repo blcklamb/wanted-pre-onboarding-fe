@@ -64,7 +64,11 @@ function LoginForm() {
           localStorage.setItem("userToken", userToken);
           alert('Sign In Complete!')
         }catch (error:any){
-          alert(error.response.data.message)
+          if (error.response.data.message==="Unauthorized") {
+            alert("비밀번호가 일치하지 않습니다.")
+          } else {
+            alert(error.response.data.message)
+          }
         }
       }
       if (localStorage.getItem("userToken")) {
