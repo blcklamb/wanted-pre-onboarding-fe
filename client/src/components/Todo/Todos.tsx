@@ -16,6 +16,7 @@ import { faTrash, faPencilAlt } from '@fortawesome/free-solid-svg-icons';
 
 function Todos({ todoElement, setTodos }: any) {
   const [editing, setEditing] = useState(false);
+  const [tempTodo, setTempTodo] = useState(todoElement.todo);
   const [updateTodo, setUpdateTodo] = useState(todoElement.todo);
   const [completeCheck, setCompleteCheck] = useState<boolean>(todoElement.isCompleted);
 
@@ -43,6 +44,12 @@ function Todos({ todoElement, setTodos }: any) {
     } catch (error: any) {
       return error.response.data;
     }
+    setEditing(false);
+  };
+
+  const onCancel: React.MouseEventHandler<HTMLButtonElement> = event => {
+    event.preventDefault();
+    setUpdateTodo(tempTodo);
     setEditing(false);
   };
   const onDelete = async () => {
@@ -86,7 +93,7 @@ function Todos({ todoElement, setTodos }: any) {
                   placeholder="Update your todo"
                 />
                 <TodoFormSubmit type="submit">Update</TodoFormSubmit>
-                <TodoFormSubmit>Cancel</TodoFormSubmit>
+                <TodoFormSubmit onClick={onCancel}>Cancel</TodoFormSubmit>
               </TodoCreateContainer>
             </TodoFormContainer>
           </>
